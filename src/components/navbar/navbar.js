@@ -19,7 +19,7 @@ const Navbar = () => {
         </Icons>
         {/*facebook*/}
         <Icons
-          fill="#002678"
+          fill="#007dff"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -82,7 +82,7 @@ const Navbar = () => {
 // styled component
 
 const Icons = styled.svg`
-  fill: #001033;
+  fill: #d98105;
   margin: 1rem;
   &:hover {
     fill: ${(props) => props.fill || "#001033"};
