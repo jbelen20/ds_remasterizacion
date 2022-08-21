@@ -1,9 +1,15 @@
 import "./App.css";
+import HomeSlider from "./components/home/homeSlider";
+import Navbar from "./components/navbar/navbar";
+import styled from "styled-components";
 
 function App() {
   return (
     <div className="App">
-      <h1>Dulce sabor</h1>
+      <div className="homeSlider">
+        <HomeSlider />
+      </div>
+      <Navbar />
     </div>
   );
 }
