@@ -1,4 +1,5 @@
 import "./App.css";
+import Highlights from "./components/home/Highlights";
 import HomeSlider from "./components/home/homeSlider";
 import Products from "./components/home/Products";
 import We from "./components/home/We";
@@ -13,6 +14,7 @@ function App() {
       </div>
       <Products />
       <We />
+      <Highlights />
     </div>
   );
 }
