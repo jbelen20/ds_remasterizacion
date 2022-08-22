@@ -1,6 +1,7 @@
 import "./App.css";
 import HomeSlider from "./components/home/homeSlider";
 import Products from "./components/home/Products";
+import We from "./components/home/We";
 import Navbar from "./components/navbar/navbar";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <HomeSlider />
       </div>
       <Products />
+      <We />
     </div>
   );
 }
