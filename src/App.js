@@ -1,15 +1,16 @@
 import "./App.css";
 import HomeSlider from "./components/home/homeSlider";
+import Products from "./components/home/Products";
 import Navbar from "./components/navbar/navbar";
-import styled from "styled-components";
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <div className="homeSlider">
         <HomeSlider />
       </div>
-      <Navbar />
+      <Products />
     </div>
   );
 }
