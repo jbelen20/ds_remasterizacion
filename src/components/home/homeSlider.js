@@ -214,6 +214,7 @@ const Pragraph = styled.p`
   width: ${(props) => props.width};
   margin-left: ${(props) => props.marginLeft || "7rem"};
   background: ${(props) => props.background || "none"};
+  text-shadow: 1px 1px 1px rgb(48, 48, 48);
 `;
 
 const Click = styled.button`
@@ -227,6 +228,7 @@ const Click = styled.button`
   font-size: 1.1rem;
   background: ${(props) => props.background || "gray"};
   color: #fff;
+  text-shadow: 1px 1px 3px rgb(48, 48, 48);
 
   &:hover {
     background: none;
