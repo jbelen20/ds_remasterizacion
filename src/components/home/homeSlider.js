@@ -142,7 +142,6 @@ const HomeSlider = () => {
 
 const Content = styled.div`
   position: none;
-  margin-bottom: 3rem;
   margin-top: -4rem;
 `;
 
