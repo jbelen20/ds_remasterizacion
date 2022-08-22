@@ -82,6 +82,9 @@ const Navbar = () => {
 // styled component
 
 const Icons = styled.svg`
+  position: relative;
+  top: 10%;
+  z-index: 15;
   fill: #d98105;
   margin: 1rem;
   &:hover {
@@ -111,7 +114,7 @@ const Contain = styled.div`
   //background-color: #56789d;
   display: flex;
   justify-content: space-around;
-  top: 10%;
+  /* top: 10%; */
   position: relative;
 `;
 
