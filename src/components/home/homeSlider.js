@@ -50,92 +50,106 @@ const HomeSlider = () => {
   };
 
   return (
-    <ContenedorPrincipal>
-      {/* slideshow */}
-      <ContenedorSlideShow ref={slideshow}>
-        <Slide>
-          <img src={img1} alt="" />
-          <div>
-            <Pragraph fontSize="2.2rem" width="22rem" color="#8c0101" top="20%">
-              Ven a probar nuestaras delicias de dulce sabor, todo elaborado con
-              dedicacion y cariño al arte de cocinar
-            </Pragraph>
-            <Click
-              top="63%"
-              marginLeft="-30rem"
-              background="#8c0101 "
-              borderHover="#8c0101"
-              colorHover="#8c0101"
-            >
-              Ver más
-            </Click>
-          </div>
-        </Slide>
+    <Content>
+      <ContenedorPrincipal>
+        {/* slideshow */}
+        <ContenedorSlideShow ref={slideshow}>
+          <Slide>
+            <img src={img1} alt="" />
+            <div>
+              <Pragraph
+                fontSize="2.2rem"
+                width="22rem"
+                color="#8c0101"
+                top="20%"
+              >
+                Ven a probar nuestaras delicias de dulce sabor, todo elaborado
+                con dedicacion y cariño al arte de cocinar
+              </Pragraph>
+              <Click
+                top="63%"
+                marginLeft="-22rem"
+                background="#8c0101 "
+                borderHover="#8c0101"
+                colorHover="#8c0101"
+              >
+                Ver más
+              </Click>
+            </div>
+          </Slide>
 
-        <Slide>
-          <img src={img2} alt="" />
-          <div>
-            <Pragraph
-              fontSize="2.6rem"
-              width="25rem"
-              marginLeft="60%"
-              top="15%"
-            >
-              Batir con amor, Hornear con pasion, Decorar con el corazon.
-            </Pragraph>
-            <Click
-              top="50%"
-              marginLeft="16%"
-              background="#a9de6b"
-              borderHover="#a9de6b"
-              colorHover="#a9de6b"
-            >
-              Ver más
-            </Click>
-          </div>
-        </Slide>
+          <Slide>
+            <img src={img2} alt="" />
+            <div>
+              <Pragraph
+                fontSize="2.6rem"
+                width="25rem"
+                marginLeft="60%"
+                top="15%"
+              >
+                Batir con amor, Hornear con pasion, Decorar con el corazon.
+              </Pragraph>
+              <Click
+                top="50%"
+                marginLeft="16%"
+                background="#a9de6b"
+                borderHover="#a9de6b"
+                colorHover="#a9de6b"
+              >
+                Ver más
+              </Click>
+            </div>
+          </Slide>
 
-        <Slide>
-          <img src={img3} alt="" />
-          <div>
-            <Pragraph
-              fontSize="3rem"
-              width="18rem"
-              marginLeft="15%"
-              color="#fff"
-              top="30%"
-            >
-              Es un placer ser tu placer
-            </Pragraph>
-            <Click
-              top="60%"
-              marginLeft="-34%"
-              background="#d98105"
-              borderHover="#d98105"
-              colorHover="#d98105"
-            >
-              Ver más
-            </Click>
-          </div>
-        </Slide>
-      </ContenedorSlideShow>
+          <Slide>
+            <img src={img3} alt="" />
+            <div>
+              <Pragraph
+                fontSize="3rem"
+                width="18rem"
+                marginLeft="15%"
+                color="#fff"
+                top="30%"
+              >
+                Es un placer ser tu placer
+              </Pragraph>
+              <Click
+                top="60%"
+                marginLeft="-34%"
+                background="#d98105"
+                borderHover="#d98105"
+                colorHover="#d98105"
+              >
+                Ver más
+              </Click>
+            </div>
+          </Slide>
+        </ContenedorSlideShow>
 
-      {/* controles */}
-      <Controls>
-        <Boton izquierdo onClick={anterior}>
-          <ArrowLeft />
-        </Boton>
-        <Boton onClick={siguiente}>
-          <ArrowRight />
-        </Boton>
-      </Controls>
-    </ContenedorPrincipal>
+        {/* controles */}
+        <Controls>
+          <Boton izquierdo onClick={anterior}>
+            <ArrowLeft />
+          </Boton>
+          <Boton onClick={siguiente}>
+            <ArrowRight />
+          </Boton>
+        </Controls>
+      </ContenedorPrincipal>
+    </Content>
   );
 };
+
+const Content = styled.div`
+  position: none;
+  margin-bottom: 3rem;
+  margin-top: -4rem;
+`;
 
 const ContenedorPrincipal = styled.div`
   position: absolute;
   z-index: 0;
+  overflow: hidden;
 `;
 
 const ContenedorSlideShow = styled.div`
@@ -187,7 +201,7 @@ const Boton = styled.button`
         ? "drop-shadow(2px 0px 0px #fff)"
         : "drop-shadow(-2px 0px 0px #fff)"};
   }
-  ${(props) => (props.izquierdo ? "right:600px" : "left:600px")}
+  ${(props) => (props.izquierdo ? "right:450px" : "left:450px")}
 `;
 
 const Pragraph = styled.p`
