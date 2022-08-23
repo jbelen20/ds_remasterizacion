@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import video from "../../image/video.mp4";
 import "./Styles/we.css";
 
@@ -15,7 +16,9 @@ const We = () => {
           proviene de recetas familiares trasendentales transmitidas con cariño
           al publico
         </p>
-        <button id="seeMore">Ver más</button>
+        <Link to="wedetails">
+          <button id="seeMore">Ver más</button>
+        </Link>
       </div>
     </div>
   );

@@ -1,23 +1,23 @@
-import "./App.css";
-import Footer from "./components/home/Footer";
-import Highlights from "./components/home/Highlights";
-import HomeSlider from "./components/home/homeSlider";
-import Products from "./components/home/Products";
-import We from "./components/home/We";
-import Navbar from "./components/navbar/navbar";
+import View from "./View";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ViewAProduct from "./components/otherViews/ViewAProduct";
+import ViewAllProducts from "./components/otherViews/ViewAllProducts";
+import Favorites from "./components/otherViews/Favorites";
+import ShoppingCart from "./components/otherViews/ShoppingCart";
+import WeDetails from "./components/otherViews/WeDetails";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <div className="homeSlider">
-        <HomeSlider />
-      </div>
-      <Products />
-      <We />
-      <Highlights />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<View />} />
+        <Route path="/aproduct" element={<ViewAProduct />} />
+        <Route path="/allproducts" element={<ViewAllProducts />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/shoppingcart" element={<ShoppingCart />} />
+        <Route path="/wedetails" element={<WeDetails />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
