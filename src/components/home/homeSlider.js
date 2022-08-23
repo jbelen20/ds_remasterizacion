@@ -1,8 +1,11 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+//image
 import { ReactComponent as ArrowLeft } from "../../image/arrowLeft.svg";
 import { ReactComponent as ArrowRight } from "../../image/arrowRight.svg";
 
-import styled from "styled-components";
 import img1 from "../../image/cupcake.jpg";
 import img2 from "../../image/macarron.jpg";
 import img3 from "../../image/tortaChocolate.jpg";
@@ -67,15 +70,17 @@ const HomeSlider = () => {
                 Ven a probar nuestaras delicias de dulce sabor, todo elaborado
                 con dedicacion y cariño al arte de cocinar
               </Pragraph>
-              <Click
-                top="60%"
-                marginLeft="7.5rem"
-                background="#4e2004"
-                borderHover="#4e2004"
-                colorHover="#4e2004"
-              >
-                Ver más
-              </Click>
+              <Link to="/allproducts">
+                <Click
+                  top="60%"
+                  marginLeft="7.5rem"
+                  background="#4e2004"
+                  borderHover="#4e2004"
+                  colorHover="#4e2004"
+                >
+                  Ver más
+                </Click>
+              </Link>
             </div>
           </Slide>
 
@@ -90,15 +95,17 @@ const HomeSlider = () => {
               >
                 Batir con amor, Hornear con pasion, Decorar con el corazon.
               </Pragraph>
-              <Click
-                top="50%"
-                marginLeft="16%"
-                background="#a9de6b"
-                borderHover="#a9de6b"
-                colorHover="#a9de6b"
-              >
-                Ver más
-              </Click>
+              <Link to="/allproducts">
+                <Click
+                  top="50%"
+                  marginLeft="16%"
+                  background="#a9de6b"
+                  borderHover="#a9de6b"
+                  colorHover="#a9de6b"
+                >
+                  Ver más
+                </Click>
+              </Link>
             </div>
           </Slide>
 
@@ -114,15 +121,17 @@ const HomeSlider = () => {
               >
                 Es un placer ser tu placer
               </Pragraph>
-              <Click
-                top="60%"
-                marginLeft="-34%"
-                background="#d98105"
-                borderHover="#d98105"
-                colorHover="#d98105"
-              >
-                Ver más
-              </Click>
+              <Link to="/allproducts">
+                <Click
+                  top="60%"
+                  marginLeft="-34%"
+                  background="#d98105"
+                  borderHover="#d98105"
+                  colorHover="#d98105"
+                >
+                  Ver más
+                </Click>
+              </Link>
             </div>
           </Slide>
         </ContenedorSlideShow>

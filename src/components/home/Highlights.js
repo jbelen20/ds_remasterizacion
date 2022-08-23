@@ -3,9 +3,6 @@ import { ReactComponent as ArrowLeft } from "../../image/arrowLeft.svg";
 import { ReactComponent as ArrowRight } from "../../image/arrowRight.svg";
 
 import styled from "styled-components";
-import img1 from "../../image/pasteles.jpg";
-import img2 from "../../image/macarron.jpg";
-import img3 from "../../image/tortaChocolate.jpg";
 import CardHighlights from "./CardHighlights";
 
 const Highlights = () => {
