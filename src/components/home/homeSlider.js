@@ -3,7 +3,7 @@ import { ReactComponent as ArrowLeft } from "../../image/arrowLeft.svg";
 import { ReactComponent as ArrowRight } from "../../image/arrowRight.svg";
 
 import styled from "styled-components";
-import img1 from "../../image/pasteles.jpg";
+import img1 from "../../image/cupcake.jpg";
 import img2 from "../../image/macarron.jpg";
 import img3 from "../../image/tortaChocolate.jpg";
 
@@ -58,20 +58,21 @@ const HomeSlider = () => {
             <img src={img1} alt="" />
             <div>
               <Pragraph
+                marginLeft="55%"
                 fontSize="2.2rem"
                 width="22rem"
-                color="#8c0101"
+                color="#4e2004"
                 top="20%"
               >
                 Ven a probar nuestaras delicias de dulce sabor, todo elaborado
                 con dedicacion y cariño al arte de cocinar
               </Pragraph>
               <Click
-                top="63%"
-                marginLeft="-22rem"
-                background="#8c0101 "
-                borderHover="#8c0101"
-                colorHover="#8c0101"
+                top="60%"
+                marginLeft="7.5rem"
+                background="#4e2004"
+                borderHover="#4e2004"
+                colorHover="#4e2004"
               >
                 Ver más
               </Click>
@@ -142,7 +143,7 @@ const HomeSlider = () => {
 
 const Content = styled.div`
   position: none;
-  margin-top: -4rem;
+  margin-top: -9rem;
 `;
 
 const ContenedorPrincipal = styled.div`
@@ -165,7 +166,7 @@ const Slide = styled.div`
   z-index: 9;
   img {
     width: 100%;
-    height: 100vh;
+    height: 105vh;
     object-fit: cover;
     margin-top: 0;
   }
@@ -200,7 +201,7 @@ const Boton = styled.button`
         ? "drop-shadow(2px 0px 0px #fff)"
         : "drop-shadow(-2px 0px 0px #fff)"};
   }
-  ${(props) => (props.izquierdo ? "right:450px" : "left:450px")}
+  ${(props) => (props.izquierdo ? "right:550px" : "left:550px")}
 `;
 
 const Pragraph = styled.p`
@@ -213,7 +214,7 @@ const Pragraph = styled.p`
   width: ${(props) => props.width};
   margin-left: ${(props) => props.marginLeft || "7rem"};
   background: ${(props) => props.background || "none"};
-  text-shadow: 1px 1px 1px rgb(48, 48, 48);
+  text-shadow: 1px 1px 1px #ddd;
 `;
 
 const Click = styled.button`

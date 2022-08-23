@@ -96,23 +96,29 @@ const Highlights = () => {
 };
 
 const Titular = styled.p`
-  margin-top: 40rem;
+  margin-top: 48rem;
   font-size: 2.5rem;
+  margin-bottom: 0%;
   font-family: "Dancing Script", cursive;
 `;
 
 const ContenedorPrincipal = styled.div`
-  margin-top: 4rem;
+  margin: 0 auto;
   position: relative;
   z-index: 0;
-  width: 80%;
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
 `;
 
 const ContenedorSlideShow = styled.div`
   display: flex;
   flex-wrap: nowrap;
+  margin: 0 auto;
+  height: 30rem;
+  width: 85%;
+  align-items: center;
+  overflow: hidden;
 `;
 
 const Slide = styled.div`
@@ -122,9 +128,11 @@ const Slide = styled.div`
   margin-bottom: 3rem;
   img {
     width: 10rem;
-    height: 12rem;
+    height: 20rem;
     object-fit: cover;
-    margin-top: 0;
+  }
+  &:hover {
+    transform: scale(1.1);
   }
 `;
 
@@ -157,7 +165,7 @@ const Boton = styled.button`
         ? "drop-shadow(2px 0px 0px #fff)"
         : "drop-shadow(-2px 0px 0px #fff)"};
   }
-  ${(props) => (props.izquierdo ? "right:470px" : "left:710px")}
+  ${(props) => (props.izquierdo ? "right:570px" : "left:610px")}
 `;
 
 export default Highlights;

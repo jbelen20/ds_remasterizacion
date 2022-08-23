@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../home/Styles/products.css";
-import styled from "styled-components";
 
 //image
 import cake from "../../image/torta_card.jpg";
@@ -29,7 +28,7 @@ const Products = () => {
         {/* one vertical*/}
         <div>
           <div className="fatherContent">
-            <ImageCard
+            <img
               className="imageContentOne"
               src={cake}
               alt="x"
@@ -39,7 +38,7 @@ const Products = () => {
             {inHover1 != false ? <p className="textHoverCard1">Tortas</p> : ""}
           </div>
           <div className="fatherContent">
-            <ImageCard
+            <img
               className="imageContentOne"
               src={sugarFreeCake}
               alt="x"
@@ -56,7 +55,7 @@ const Products = () => {
         {/* two vertical*/}
         <div>
           <div className="fatherContent">
-            <ImageCard
+            <img
               className="imageContentTwo"
               src={litle_cake}
               alt="x"
@@ -70,7 +69,7 @@ const Products = () => {
             )}
           </div>
           <div className="fatherContent">
-            <ImageCard
+            <img
               className="imageContentTwo"
               src={chocolate}
               alt="x"
@@ -84,7 +83,7 @@ const Products = () => {
             )}
           </div>
           <div className="fatherContent">
-            <ImageCard
+            <img
               className="imageContentTwo"
               src={calugas}
               alt="x"
@@ -103,7 +102,7 @@ const Products = () => {
           <div className="contentHorizonatal">
             {/* horizontal */}
             <div className="fatherContent">
-              <ImageCard
+              <img
                 className="imageContentThreeHorizonatal1"
                 src={tarta}
                 alt="x"
@@ -117,7 +116,7 @@ const Products = () => {
               )}
             </div>
             <div className="fatherContent">
-              <ImageCard
+              <img
                 className="imageContentThreeHorizonatal2"
                 src={tartaSa}
                 alt="x"
@@ -132,7 +131,7 @@ const Products = () => {
             </div>
           </div>
           <div className="fatherContent">
-            <ImageCard
+            <img
               className="imageContentThree"
               src={coctel}
               alt="x"
@@ -150,10 +149,5 @@ const Products = () => {
     </div>
   );
 };
-
-//styled component
-const ImageCard = styled.img`
-  color: red;
-`;
 
 export default Products;
