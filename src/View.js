@@ -5,7 +5,7 @@ import Highlights from "./components/home/Highlights";
 import HomeSlider from "./components/home/homeSlider";
 import Products from "./components/home/Products";
 import We from "./components/home/We";
-import Navbar from "./components/navbar/navbar";
+import Navbar from "./components/home/navbar";
 
 const View = () => {
   return (

@@ -1,12 +1,12 @@
 import React from "react";
 import beeImage from "../../image/bee.png";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Content, GroupOfElements, Icons, Image, ContentTitle, TitleNav } from '../../componentsSC/NavbarSC'
 
 const Navbar = () => {
   return (
-    <RealContent>
-      <Contain>
+    <Content>
+      <GroupOfElements>
         {/*div of social network*/}
         <div>
           {/*instagram*/}
@@ -47,12 +47,12 @@ const Navbar = () => {
           </a>
         </div>
         {/*logo and name of page*/}
-        <LogoAndTitle>
+        <ContentTitle>
           <Link to="/">
             <Image src={beeImage} alt="beeImage" />
           </Link>
-          <TitlePrincipal>Dulce Sabor</TitlePrincipal>
-        </LogoAndTitle>
+          <TitleNav>Dulce Sabor</TitleNav>
+        </ContentTitle>
         {/*saerch, shopping cart and favorites*/}
 
         <div>
@@ -89,66 +89,11 @@ const Navbar = () => {
             </Icons>
           </Link>
         </div>
-      </Contain>
-    </RealContent>
+      </GroupOfElements>
+    </Content>
   );
 };
 
-// styled component
 
-const RealContent = styled.div`
-  top: 0px;
-  height: 9rem;
-  position: sticky;
-  z-index: 10000;
-  background: rgb(242, 243, 244);
-  background: linear-gradient(
-    0deg,
-    rgba(242, 243, 244, 0.00043767507002800965) 20%,
-    rgba(176, 178, 180, 0) 43%,
-    rgba(3, 26, 79, 0.5522584033613445) 65%,
-    rgba(0, 17, 52, 1) 100%
-  );
-`;
-
-const Contain = styled.div`
-  display: flex;
-  justify-content: space-around;
-  position: relative;
-  top: -15px;
-`;
-
-const Icons = styled.svg`
-  position: relative;
-  top: 19px;
-  z-index: 15;
-  fill: #ddd;
-  margin: 1rem;
-  &:hover {
-    fill: ${(props) => props.fill || "#d98105"};
-    transform: scale(1.2);
-  }
-`;
-
-const Image = styled.img`
-  width: 7rem;
-  position: relative;
-  z-index: 1;
-`;
-
-const TitlePrincipal = styled.h1`
-  font-family: "Dancing Script", cursive;
-  font-weight: 200;
-  margin: 0 auto;
-  position: absolute;
-  width: 13rem;
-  top: 60%;
-  z-index: 10;
-`;
-
-const LogoAndTitle = styled.div`
-  position: absolute;
-  width: 11rem;
-`;
 
 export default Navbar;
