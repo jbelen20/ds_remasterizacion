@@ -1,25 +1,27 @@
 import React from "react";
-import "../home/Styles/footer.css";
+import {ContainFooter, SectiontFooter, Titles, Descriptions, DescriptionFooterUl} from '../../componentsSC/FooterSC'
+
 
 const Footer = () => {
   return (
-    <div className="contentFooter">
-      <div className="miniContentFooter">
-        <h2 className="titleFooter">Sucursales</h2>
-        <ul className="descriptionFooterUl">
+    <ContainFooter>
+      <SectiontFooter>
+        <Titles>Sucursales</Titles>
+        <DescriptionFooterUl>
           <li>Providencia, Region Metropolitana</li>
           <li>Santiago, Region Metropolitana</li>
           <li>La Serena, coqimbo</li>
-        </ul>
-      </div>
-      <div className="miniContentFooter">
-        <h2 className="titleFooter">Despachos</h2>
-        <p className="descriptionFooterP">
+        </DescriptionFooterUl>
+      </SectiontFooter>
+      <SectiontFooter>
+        <Titles>Despachos</Titles>
+        <Descriptions>
           Despachos a todas las regiones de chile con sucursales
-        </p>
-      </div>
-    </div>
+        </Descriptions>
+      </SectiontFooter>
+    </ContainFooter>
   );
 };
+
 
 export default Footer;

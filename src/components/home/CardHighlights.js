@@ -1,21 +1,21 @@
 import React from "react";
-import "../home/Styles/cardHightlights.css";
 import tarta from "../../image/tarta_card.jpg";
 import { Link } from "react-router-dom";
+import {ContentCardDetails, NameCard, ValueCard} from "../../componentsSC/CardHighlightsSC";
 
 const CardHighlights = () => {
-  const img = "https://via.placeholder.com/150";
   return (
-    <div className="contentCardHightlights">
+    <>
       <Link to="/aproduct">
         <img src={tarta} alt="x" />
       </Link>
-      <div className="contentCardHightlightsDetails">
-        <p className="nameCard">nombre</p>
-        <p className="valueCard">valor</p>
-      </div>
-    </div>
+      <ContentCardDetails>
+        <NameCard>nombre</NameCard>
+        <ValueCard>valor</ValueCard>
+      </ContentCardDetails>
+    </>
   );
 };
+
 
 export default CardHighlights;

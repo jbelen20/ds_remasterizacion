@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
 import { ReactComponent as ArrowLeft } from "../../image/arrowLeft.svg";
 import { ReactComponent as ArrowRight } from "../../image/arrowRight.svg";
-
-import styled from "styled-components";
 import CardHighlights from "./CardHighlights";
+import {Title, Content, ContentSlideShow, Boton, Controls, Slide} from '../../componentsSC/HighlightsSC'
 
 const Highlights = () => {
   const slideshow = useRef(null);
@@ -49,10 +48,10 @@ const Highlights = () => {
 
   return (
     <>
-      <Titular>Destacados</Titular>
-      <ContenedorPrincipal>
+      <Title>Destacados</Title>
+      <Content>
         {/* slideshow */}
-        <ContenedorSlideShow ref={slideshow}>
+        <ContentSlideShow ref={slideshow}>
           <Slide>
             <CardHighlights />
           </Slide>
@@ -76,7 +75,7 @@ const Highlights = () => {
           <Slide>
             <CardHighlights />
           </Slide>
-        </ContenedorSlideShow>
+        </ContentSlideShow>
 
         {/* controles */}
         <Controls>
@@ -87,82 +86,9 @@ const Highlights = () => {
             <ArrowRight />
           </Boton>
         </Controls>
-      </ContenedorPrincipal>
+      </Content>
     </>
   );
 };
-
-const Titular = styled.p`
-  margin-top: 48rem;
-  font-size: 2.5rem;
-  margin-bottom: 0%;
-  font-family: "Dancing Script", cursive;
-`;
-
-const ContenedorPrincipal = styled.div`
-  margin: 0 auto;
-  position: relative;
-  z-index: 0;
-  width: 100%;
-  overflow-x: hidden;
-  overflow-y: visible;
-`;
-
-const ContenedorSlideShow = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  margin: 0 auto;
-  height: 30rem;
-  width: 85%;
-  align-items: center;
-  overflow: hidden;
-`;
-
-const Slide = styled.div`
-  width: 15rem;
-  transition: 0.3s ease all;
-  z-index: 9;
-  margin-bottom: 3rem;
-  img {
-    width: 10rem;
-    height: 20rem;
-    object-fit: cover;
-  }
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
-const Controls = styled.div`
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  z-index: 15;
-  pointer-events: none;
-`;
-
-const Boton = styled.button`
-  pointer-events: all;
-  background: none;
-  border: none;
-  width: 30px;
-  outline: none;
-  position: absolute;
-  transition: 0.9s ease all;
-  cursor: pointer;
-  &:hover {
-    background: rgba(0, 0, 0, 0.2);
-    path {
-      fill: #fff;
-    }
-  }
-  path {
-    filter: ${(props) =>
-      props.izquierdo
-        ? "drop-shadow(2px 0px 0px #fff)"
-        : "drop-shadow(-2px 0px 0px #fff)"};
-  }
-  ${(props) => (props.izquierdo ? "right:570px" : "left:610px")}
-`;
 
 export default Highlights;
