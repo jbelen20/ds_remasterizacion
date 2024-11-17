@@ -1,5 +1,23 @@
 import React, { useState } from "react";
-import "../home/Styles/products.css";
+
+import {
+  ContentProducts,
+  Title,
+  ProductCategories,
+  SectionProducts,
+  ImageContentOne,
+  ImageContentTwo,
+  TextHoverCard1,
+  TextHoverCard2,
+  HorizonatalContent,
+  ImageContentThreeHorizonatal1,
+  ImageContentThreeHorizonatal12,
+  TextHoverCard3,
+  TextHoverCard3right,
+  ImageContentThree,
+  TextHoverCard3coctel
+  } 
+  from '../../componentsSC/ProductsSC'
 
 //image
 import cake from "../../image/torta_card.jpg";
@@ -23,151 +41,143 @@ const Products = () => {
   const [inHover8, setInHover8] = useState(false);
 
   return (
-    <div className="contentProducts">
-      <h2 id="title">Products</h2>
-      <div className="contentGrandFather">
+    <ContentProducts>
+      <Title>Products</Title>
+      <ProductCategories>
         {/* one vertical*/}
         <div>
-          <div className="fatherContent">
+          <SectionProducts>
             <Link to="allproducts">
-              <img
-                className="imageContentOne"
+              <ImageContentOne
                 src={cake}
                 alt="x"
                 onMouseEnter={() => setInHover1(true)}
                 onMouseLeave={() => setInHover1(false)}
               />
-              {inHover1 != false ? (
-                <p className="textHoverCard1">Tortas</p>
+              {inHover1 !== false ? (
+                <TextHoverCard1>Tortas</TextHoverCard1>
               ) : (
                 ""
               )}
             </Link>
-          </div>
-          <div className="fatherContent">
+          </SectionProducts>
+          <SectionProducts>
             <Link to="allproducts">
-              <img
-                className="imageContentOne"
+              <ImageContentOne
                 src={sugarFreeCake}
                 alt="x"
                 onMouseEnter={() => setInHover2(true)}
                 onMouseLeave={() => setInHover2(false)}
               />
-              {inHover2 != false ? (
-                <p className="textHoverCard1">Tortas sin azucar</p>
+              {inHover2 !== false ? (
+                <TextHoverCard1>Tortas sin azucar</TextHoverCard1>
               ) : (
                 ""
               )}
             </Link>
-          </div>
+          </SectionProducts>
         </div>
         {/* two vertical*/}
         <div>
-          <div className="fatherContent">
+          <SectionProducts>
             <Link to="allproducts">
-              <img
-                className="imageContentTwo"
+              <ImageContentTwo
                 src={litle_cake}
                 alt="x"
                 onMouseEnter={() => setInHover3(true)}
                 onMouseLeave={() => setInHover3(false)}
               />
-              {inHover3 != false ? (
-                <p className="textHoverCard2">Pastelitos</p>
+              {inHover3 !== false ? (
+                <TextHoverCard2>Pastelitos</TextHoverCard2>
               ) : (
                 ""
               )}
             </Link>
-          </div>
-          <div className="fatherContent">
+          </SectionProducts>
+          <SectionProducts>
             <Link to="allproducts">
-              <img
-                className="imageContentTwo"
+              <ImageContentTwo
                 src={chocolate}
                 alt="x"
                 onMouseEnter={() => setInHover4(true)}
                 onMouseLeave={() => setInHover4(false)}
               />
-              {inHover4 != false ? (
-                <p className="textHoverCard2">Chocolates</p>
+              {inHover4 !== false ? (
+                <TextHoverCard2>Chocolates</TextHoverCard2>
               ) : (
                 ""
               )}
             </Link>
-          </div>
-          <div className="fatherContent">
+          </SectionProducts>
+          <SectionProducts>
             <Link to="allproducts">
-              <img
-                className="imageContentTwo"
+              <ImageContentTwo
                 src={calugas}
                 alt="x"
                 onMouseEnter={() => setInHover5(true)}
                 onMouseLeave={() => setInHover5(false)}
               />
-              {inHover5 != false ? (
-                <p className="textHoverCard2">Dulces & galletas</p>
+              {inHover5 !== false ? (
+                <TextHoverCard2>Dulces & galletas</TextHoverCard2>
               ) : (
                 ""
               )}
             </Link>
-          </div>
+          </SectionProducts>
         </div>
         {/* three vertical*/}
         <div>
-          <div className="contentHorizonatal">
+          <HorizonatalContent>
             {/* horizontal */}
-            <div className="fatherContent">
+            <SectionProducts>
               <Link to="allproducts">
-                <img
-                  className="imageContentThreeHorizonatal1"
+                <ImageContentThreeHorizonatal1
                   src={tarta}
                   alt="x"
                   onMouseEnter={() => setInHover6(true)}
                   onMouseLeave={() => setInHover6(false)}
                 />
-                {inHover6 != false ? (
-                  <p className="textHoverCard3">Tartas</p>
+                {inHover6 !== false ? (
+                  <TextHoverCard3>Tartas</TextHoverCard3>
                 ) : (
                   ""
                 )}
               </Link>
-            </div>
-            <div className="fatherContent">
+            </SectionProducts>
+            <SectionProducts>
               <Link to="allproducts">
-                <img
-                  className="imageContentThreeHorizonatal2"
+                <ImageContentThreeHorizonatal12
                   src={tartaSa}
                   alt="x"
                   onMouseEnter={() => setInHover7(true)}
                   onMouseLeave={() => setInHover7(false)}
                 />
-                {inHover7 != false ? (
-                  <p className="textHoverCard3right">Tartas sin azucar</p>
+                {inHover7 !== false ? (
+                  <TextHoverCard3right>Tartas sin azucar</TextHoverCard3right>
                 ) : (
                   ""
                 )}
               </Link>
-            </div>
-          </div>
-          <div className="fatherContent">
+            </SectionProducts>
+          </HorizonatalContent>
+          <SectionProducts>
             <Link to="allproducts">
-              <img
-                className="imageContentThree"
+              <ImageContentThree
                 src={coctel}
                 alt="x"
                 onMouseEnter={() => setInHover8(true)}
                 onMouseLeave={() => setInHover8(false)}
               />
-              {inHover8 != false ? (
-                <p className="textHoverCard3coctel">Tartas sin azucar</p>
+              {inHover8 !== false ? (
+                <TextHoverCard3coctel>Tartas sin azucar</TextHoverCard3coctel>
               ) : (
                 ""
               )}
             </Link>
-          </div>
+          </SectionProducts>
         </div>
-      </div>
-    </div>
+      </ProductCategories>
+    </ContentProducts>
   );
 };
 
