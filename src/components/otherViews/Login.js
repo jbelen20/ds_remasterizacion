@@ -12,7 +12,8 @@ import { useState } from 'react'
 
 
 
-export default function Login({ setUser }) {
+
+export default function Login() {
   
   const [emailOrPhone, setEmailOrPhone] = useState('')
   const [password, setPassword] = useState('')
@@ -27,9 +28,9 @@ export default function Login({ setUser }) {
       return
     }
     setError(false)
-    setUser([emailOrPhone])
   }
 
+ 
 
 
   return (
@@ -57,7 +58,9 @@ export default function Login({ setUser }) {
           />
         </HaveInputs>
         <CreateAccount>No tienes una cuenta aun?</CreateAccount>
+     
         <ButtonLogin>LOGIN</ButtonLogin>
+  
       </form>
       {error && <p>Todos los campos son obligatorios</p>}
     </ContainProfileLogin>

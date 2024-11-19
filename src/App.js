@@ -7,11 +7,10 @@ import ShoppingCart from "./components/otherViews/ShoppingCart";
 import WeDetails from "./components/otherViews/WeDetails";
 import Login from "./components/otherViews/Login";
 import Profile from "./components/otherViews/Profile";
-import { useState } from "react";
+
 
 
 function App() {
-  const [user, setUser] = useState([])
 
   return (
     <BrowserRouter>
@@ -22,12 +21,8 @@ function App() {
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/shoppingcart" element={<ShoppingCart />} />
         <Route path="/wedetails" element={<WeDetails />} />
-        {
-          !user.length > 0
-            ? <Route path="/login" element={<Login setUser={setUser} />} />
-            : <Route path="/profile" element={<Profile />} />
-        }
-       
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login  />} />
       </Routes>
     </BrowserRouter>
   );
