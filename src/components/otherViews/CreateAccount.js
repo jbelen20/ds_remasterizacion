@@ -1,34 +1,87 @@
 import React from 'react'
 import { ContentFormAccount } from '../../componentsSC/CreateAccountSC'
+//import { useSelector } from 'react-redux'
+import { useState } from 'react'
 
 export default function CreateAccount() {
+ //const stateUser = useSelector(store => store.users)
 
+ const [newUser, setNewUser] = useState({
+    name: '',
+    lastname:'',
+    email: '',
+    phone: '',
+    password: ''
+ })
+
+ const handlerRecopUser = (e)=>{
+  
+  setNewUser({
+    ...newUser,
+    [e.target.name]: e.target.value,
+  })
+}
+
+const handlerSubmit = (e)=>{
+  e.preventDeault()
+  console.log(newUser)
+ }
     
 
   return (
     <ContentFormAccount>
       <div>
         <h2>formulario creacion de cuenta</h2>
-        <form>
+        <form onSubmit={handlerSubmit}>
             <section>
-                <label for='name'>name</label>
-                <input type='text' id='name' placeholder='name'/>
+                <label htmlFor='name'>name</label>
+                <input
+                  name='name' 
+                  type='text' 
+                  id='name' 
+                  placeholder='name'
+                  onChange={handlerRecopUser}
+                 />
             </section>
             <section>
-                <label for='lastname'>lastname</label>
-                <input type='text' id='lastname' placeholder='lastname'/>
+                <label htmlFor='lastname'>lastname</label>
+                <input 
+                  name='lastname' 
+                  type='text' 
+                  id='lastname' 
+                  placeholder='lastname'
+                  onChange={handlerRecopUser}
+                />
             </section>
             <section>
-                <label for='email'>email</label>
-                <input type='text' id='email' placeholder='email'/>
+                <label htmlFor='email'>email</label>
+                <input 
+                  name='email' 
+                  type='text' 
+                  id='email' 
+                  placeholder='email'
+                  onChange={handlerRecopUser}
+                />
             </section>
             <section>
-                <label for='phone'>phone</label>
-                <input type='text' id='phone' placeholder='phone'/>
+                <label htmlFor='phone'>phone</label>
+                <input 
+                  name='phone' 
+                  type='text' 
+                  id='phone' 
+                  placeholder='phone'
+                  onChange={handlerRecopUser}
+                />
             </section>
             <section>
-                <label for='password'>password</label>
-                <input type='password' id='password' placeholder='password'/>
+                <label htmlFor='password'>password</label>
+                <input 
+                  name='password' 
+                  type='password' 
+                  id='password' 
+                  placeholder='password'
+                  onChange={handlerRecopUser}
+                />
             </section>
         </form>
         <button>crear</button>
