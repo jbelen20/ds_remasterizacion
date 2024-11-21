@@ -1,10 +1,11 @@
 import React from 'react'
 import { ContentFormAccount } from '../../componentsSC/CreateAccountSC'
-//import { useSelector } from 'react-redux'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addUser } from '../../features/users/userSlice'
 
 export default function CreateAccount() {
- //const stateUser = useSelector(store => store.users)
+  const dispatch = useDispatch()
 
  const [newUser, setNewUser] = useState({
     name: '',
@@ -22,9 +23,10 @@ export default function CreateAccount() {
   })
 }
 
-const handlerSubmit = (e)=>{
-  e.preventDeault()
+const handlerSubmit = (event)=>{
+  event.preventDefault()
   console.log(newUser)
+  dispatch(addUser('parametro'))
  }
     
 
@@ -83,8 +85,8 @@ const handlerSubmit = (e)=>{
                   onChange={handlerRecopUser}
                 />
             </section>
-        </form>
         <button>crear</button>
+        </form>
       </div>
     </ContentFormAccount>
   )
