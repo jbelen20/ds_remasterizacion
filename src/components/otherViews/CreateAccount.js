@@ -3,8 +3,10 @@ import { ContentFormAccount } from '../../componentsSC/CreateAccountSC'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../../features/users/userSlice'
+import { useNavigate } from 'react-router-dom'
 
 export default function CreateAccount() {
+  const navigate = useNavigate();
   const dispatch = useDispatch()
 
  const [newUser, setNewUser] = useState({
@@ -18,7 +20,6 @@ export default function CreateAccount() {
  const [error, setError] = useState(false)
 
  const handlerRecopUser = (e)=>{
-  
   setNewUser({
     ...newUser,
     [e.target.name]: e.target.value,
@@ -34,6 +35,7 @@ const handlerSubmit = (event)=>{
   setError(false)
   console.log(newUser)
   dispatch(addUser(newUser))
+  navigate("/profile")
  }
     
 

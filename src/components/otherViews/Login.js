@@ -29,7 +29,7 @@ export default function Login() {
     }
     setError(false)
     console.log({'name':emailOrPhone, 'password':password })
-    navigate("/login/profile");
+    navigate("/profile");
   }
 
  
