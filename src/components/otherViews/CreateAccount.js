@@ -15,6 +15,8 @@ export default function CreateAccount() {
     password: ''
  })
 
+ const [error, setError] = useState(false)
+
  const handlerRecopUser = (e)=>{
   
   setNewUser({
@@ -25,8 +27,13 @@ export default function CreateAccount() {
 
 const handlerSubmit = (event)=>{
   event.preventDefault()
+  if(newUser.name === "" || newUser.lastname === "" || newUser.email === "" || newUser.phone === "" || newUser.password === "" ){
+    setError(true)
+    return
+  }
+  setError(false)
   console.log(newUser)
-  dispatch(addUser('parametro'))
+  dispatch(addUser(newUser))
  }
     
 
@@ -87,6 +94,7 @@ const handlerSubmit = (event)=>{
             </section>
         <button>crear</button>
         </form>
+        {error && <p>Todos los campos son obligatorios</p>}
       </div>
     </ContentFormAccount>
   )
