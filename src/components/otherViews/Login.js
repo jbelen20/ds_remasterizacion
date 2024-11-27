@@ -5,21 +5,18 @@ import { ContainProfileLogin,
          ProfileIcon,
          InputLogin,
          CreateAccount,
-         ButtonLogin
+         ButtonLogin,
+         AlertError
 } from '../../componentsSC/LoginSC'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 
 export default function Login() {
-
   const navigate = useNavigate();
-  
   const [emailOrPhone, setEmailOrPhone] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(false)
-
-//console.log(emailOrPhone, password)
 
   const handlerSubmit = (e)=>{
     e.preventDefault()
@@ -31,9 +28,6 @@ export default function Login() {
     console.log({'name':emailOrPhone, 'password':password })
     navigate("/profile");
   }
-
- 
-
 
   return (
   <>
@@ -58,6 +52,7 @@ export default function Login() {
             onChange={e => setPassword(e.target.value)}
           />
         </HaveInputs>
+      {error && <AlertError>¡Todos los campos son obligatorios!</AlertError>}
         <Link to='/createaccount'>
           <CreateAccount>No tienes una cuenta aun?</CreateAccount>
         </Link>
@@ -65,7 +60,6 @@ export default function Login() {
         <ButtonLogin onClick={handlerSubmit} >LOGIN</ButtonLogin>
   
       </form>
-      {error && <p>Todos los campos son obligatorios</p>}
     </ContainProfileLogin>
   </>
   )

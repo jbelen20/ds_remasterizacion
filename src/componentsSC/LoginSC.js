@@ -41,3 +41,11 @@ export const ButtonLogin = styled.button`
 
 `
 
+export const AlertError = styled.p`
+   color: red;
+   display: felx;
+   justify-content: center;
+   font-weight: 800;
+   font-size: 0.8rem;
+`
+

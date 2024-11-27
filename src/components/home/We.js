@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import video from "../../image/video.mp4";
 import {ContentWe,Title, Text, Button, Video} from '../../componentsSC/WeSC'
-import styled from "styled-components";
 
 const We = () => {
   return (

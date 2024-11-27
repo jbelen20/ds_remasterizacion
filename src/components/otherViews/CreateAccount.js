@@ -1,9 +1,16 @@
 import React from 'react'
-import { ContentFormAccount } from '../../componentsSC/CreateAccountSC'
+import { ContentFormAccount,
+        RegistrationTitle,
+        Fields,
+        ButtonCreateAccount,
+} from '../../componentsSC/CreateAccountSC'
+import { AlertError } from '../../componentsSC/LoginSC'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../../features/users/userSlice'
 import { useNavigate } from 'react-router-dom'
+import {v4} from 'uuid'
+import Navbar from '../home/navbar'
 
 export default function CreateAccount() {
   const navigate = useNavigate();
@@ -34,17 +41,22 @@ const handlerSubmit = (event)=>{
   }
   setError(false)
   console.log(newUser)
-  dispatch(addUser(newUser))
+  dispatch(addUser({
+    ...newUser,
+    id: v4()
+  }))
   navigate("/profile")
  }
     
 
   return (
+    <>
+    <Navbar/>
     <ContentFormAccount>
       <div>
-        <h2>formulario creacion de cuenta</h2>
+        <RegistrationTitle>Registrate!</RegistrationTitle>
         <form onSubmit={handlerSubmit}>
-            <section>
+            <Fields>
                 <label htmlFor='name'>name</label>
                 <input
                   name='name' 
@@ -53,8 +65,8 @@ const handlerSubmit = (event)=>{
                   placeholder='name'
                   onChange={handlerRecopUser}
                  />
-            </section>
-            <section>
+            </Fields>
+            <Fields>
                 <label htmlFor='lastname'>lastname</label>
                 <input 
                   name='lastname' 
@@ -63,8 +75,8 @@ const handlerSubmit = (event)=>{
                   placeholder='lastname'
                   onChange={handlerRecopUser}
                 />
-            </section>
-            <section>
+            </Fields>
+            <Fields>
                 <label htmlFor='email'>email</label>
                 <input 
                   name='email' 
@@ -73,8 +85,8 @@ const handlerSubmit = (event)=>{
                   placeholder='email'
                   onChange={handlerRecopUser}
                 />
-            </section>
-            <section>
+            </Fields>
+            <Fields>
                 <label htmlFor='phone'>phone</label>
                 <input 
                   name='phone' 
@@ -83,8 +95,8 @@ const handlerSubmit = (event)=>{
                   placeholder='phone'
                   onChange={handlerRecopUser}
                 />
-            </section>
-            <section>
+            </Fields>
+            <Fields>
                 <label htmlFor='password'>password</label>
                 <input 
                   name='password' 
@@ -93,11 +105,12 @@ const handlerSubmit = (event)=>{
                   placeholder='password'
                   onChange={handlerRecopUser}
                 />
-            </section>
-        <button>crear</button>
+            </Fields>
+        {error && <AlertError>¡Todos los campos son obligatorios!</AlertError>}
+        <ButtonCreateAccount>Crear cuenta</ButtonCreateAccount>
         </form>
-        {error && <p>Todos los campos son obligatorios</p>}
       </div>
     </ContentFormAccount>
+    </>
   )
 }
