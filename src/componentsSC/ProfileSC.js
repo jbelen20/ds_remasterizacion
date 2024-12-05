@@ -7,3 +7,9 @@ export const TitleFavorites = styled.p`
     font-weight: 300;
     font-size: 2rem;
 `
+
+export const UserName = styled.p`
+    display: flex;
+    justify-content: center;
+    color:red;
+`
