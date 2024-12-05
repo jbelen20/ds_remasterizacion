@@ -1,21 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// const initialState = [
+//     {
+//         name:"",
+//         lastname:"",
+//         email:"",
+//         phone:"",
+//         password:"",
+//     }
+// ]
+
+
 export const createUserSlice = createSlice({
     name: 'usersPost',
     initialState: [],
     reducers:{
         addUser:(state, action) => {
             state.push(action.payload)
-        }
-    }
-})
-
-
-export const handlerFetchData = createSlice({
-    name: 'fetchData',
-    initialState: [],
-    reducers:{
-     
+        },
+        // conectionPost:()=>{
+        //     fetch('http://localhost:3000',{
+        //         method: "POST",
+        //         headers:{
+        //             "content-type": "application/JSON"
+        //         },
+        //         body:JSON.stringify(initialState)
+        //     })
+        //     .then(res => res.json())
+        //     .then(data => console.log(data))
+        // }
     }
 })
 

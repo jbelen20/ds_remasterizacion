@@ -6,7 +6,7 @@ import { ContentFormAccount,
 } from '../../componentsSC/CreateAccountSC'
 import { AlertError } from '../../componentsSC/LoginSC'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { addUser } from '../../features/users/userSlice'
 import { useNavigate } from 'react-router-dom'
 import {v4} from 'uuid'

@@ -2,9 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const handlerFetchData = createSlice({
     name: 'fetchData',
-    initialState: [],
+    initialState:[],
     reducers:{
-     
+        getAllUsers : (state, action)=>{
+            fetch('http://localhost:3001/')
+                .then(response => response.json())
+                .then(data => {
+                    state.push(data)
+                    console.log(state)
+                });
+        }
     }
 })
 
