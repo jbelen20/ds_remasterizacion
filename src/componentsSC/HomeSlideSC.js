@@ -10,6 +10,7 @@ export const PrincipalContent = styled.div`
   position: absolute;
   z-index: 0;
   overflow: hidden;
+  top:0rem;
 `;
 
 export const ContentSlideShow = styled.div`

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContentProducts = styled.div`
-  margin: 42rem auto 12rem auto;
+  margin: 40rem auto 12rem auto;
   width: 70%; 
 `
 export const Title = styled.h2`

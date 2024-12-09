@@ -5,7 +5,7 @@ export const Content = styled.div`
   top: 0px;
   height: 9rem;
   position: sticky;
-  z-index: 10000;
+  z-index: 100;
   background: rgb(242, 243, 244);
   background: linear-gradient(
     0deg,
@@ -23,6 +23,7 @@ export const GroupOfElements = styled.div`
   top: -15px;
 `;
 
+// z-index: ${(props)=>props.zindex || 15};
 export const Icons = styled.svg`
   position: relative;
   top: 19px;
@@ -34,6 +35,10 @@ export const Icons = styled.svg`
     transform: scale(1.2);
   }
 `;
+
+export const IconMenu = styled.svg`
+  margin-top: 2.1rem;
+`
 
 export const Image = styled.img`
   width: 7rem;

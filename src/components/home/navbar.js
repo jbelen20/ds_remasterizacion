@@ -1,12 +1,19 @@
 import React from "react";
 import beeImage from "../../image/bee.png";
 import { Link } from "react-router-dom";
-import { Content, GroupOfElements, Icons, Image, ContentTitle, TitleNav } from '../../componentsSC/NavbarSC'
+import { Content,
+         GroupOfElements,
+         Icons, 
+         Image, 
+         ContentTitle, 
+         TitleNav } from '../../componentsSC/NavbarSC'
 import { useNavigate } from "react-router-dom";
+import SideBar from "./SideBar";
 
 const Navbar = () => {
 
   const navigate = useNavigate()
+
 
   const navigateToProfile = (id)=>{
     navigate(`/profile/${id}}`)
@@ -15,6 +22,8 @@ const Navbar = () => {
   return (
     <Content>
       <GroupOfElements>
+      <SideBar />
+      
         {/*div of social network*/}
         <div>
           {/*instagram*/}
