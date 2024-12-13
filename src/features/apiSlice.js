@@ -12,9 +12,12 @@ export const apiSlice = createApi({
         }),
         getCategory: builder.query({
             query:()=> '/categorys'
-        })
+        }),
+        getAnyCategorys: builder.query({
+            query:(theCategory) =>  'categorys/' + theCategory,
+        }),
     })
 
 })
 
-export const { useGetAllUserQuery, useGetAUserQuery, useGetCategoryQuery } = apiSlice;
+export const { useGetAllUserQuery, useGetAUserQuery, useGetCategoryQuery, useGetAnyCategorysQuery } = apiSlice;

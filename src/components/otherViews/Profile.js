@@ -1,30 +1,29 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 import Navbar from '../home/navbar'
 import {ProfileIcon} from '../../componentsSC/LoginSC'
 import { TitleFavorites, UserName } from '../../componentsSC/ProfileSC'
-import {useGetAllUserQuery , useGetAUserQuery} from '../../features/apiSlice'
+import {  useGetAUserQuery} from '../../features/apiSlice'
+// useGetAllUserQuery
 
 
 export default function Profile({id}) {
-const userDate = useSelector(state => state.usersPost)
-// const { data: users } = useGetAllUserQuery();
+//state redux
+
+// const users = useSelector(state => state.category)
+// console.log(users, 'estadoProfile')
 const ids = 1
  const {data: aUser} = useGetAUserQuery(ids);
 const dataa = ()=>{
   try{
-    return console.log(aUser)
+    return console.log(aUser, 'aUser')
   }
   catch(error){
     return  console.log(error.message)
   }
 }
 
-console.log(dataa())
-
-
-
-
+// console.log(dataa())
 
 
   return (
@@ -39,13 +38,10 @@ console.log(dataa())
       <p>userPhone: <span>{dataa.phone}</span></p>
       <p>userPassword: <span>{dataa.password}</span></p> 
       
-
       {/* <p>all users</p>
       {users?.map((user) => (
         <li key={user.id}>{user.name}</li>
       ))} */}
-
-
 
       <TitleFavorites>tus favoritos:</TitleFavorites>
     </div>

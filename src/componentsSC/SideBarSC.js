@@ -21,15 +21,14 @@ export const TitleCategory = styled.p`
 
 
 export const ConstentSideBar = styled.div`
-    margin-top: -10rem;
+    margin-top: 1rem ;
+    margin-left: -10rem;
     position: sticky;
     top: 1px;
-    left: -2px;
-    width:100%;
     height: 100vh;
     z-index:1000;
     background: rgb(172,76,8);
     background: linear-gradient(25deg, rgba(172,76,8,1) 0%, rgba(219,122,42,1) 24%, rgba(255,248,227,0) 100%);
-    height: 100vh;
     width:22%;
+    display: none;
     `

@@ -27,7 +27,7 @@ export const GroupOfElements = styled.div`
 export const Icons = styled.svg`
   position: relative;
   top: 19px;
-  z-index: 15;
+  z-index: 15000;
   fill: #ddd;
   margin: 1rem;
   &:hover {
@@ -60,4 +60,9 @@ export const TitleNav = styled.h1`
   top: 60%;
   z-index: 10;
 `;
+
+export const ButtonGoProfile = styled.button`
+  background: none;
+  border: none;
+`
 
