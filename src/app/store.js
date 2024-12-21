@@ -8,7 +8,7 @@ import  categorySlice  from "../features/categorySlice";
 export const store = configureStore({
     reducer:{
         category: categorySlice,
-        usersPost: createUserReducer,
+        users: createUserReducer,
         fetchData: handlerFetchData,
         [apiSlice.reducerPath]: apiSlice.reducer,
     },

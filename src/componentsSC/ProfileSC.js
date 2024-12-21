@@ -11,5 +11,5 @@ export const TitleFavorites = styled.p`
 export const UserName = styled.p`
     display: flex;
     justify-content: center;
-    color:red;
+    color:#000;
 `

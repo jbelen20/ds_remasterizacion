@@ -11,6 +11,7 @@ const SideBar = () => {
   const dispatch = useDispatch()
   const [ show, setShow ]= useState(false)
   const [wichCategory, setWichCategory] = useState('')
+  // console.log(wichCategory)
   const contentSideBar = useRef(null)
 
   const navigate = useNavigate();

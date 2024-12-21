@@ -10,14 +10,20 @@ import { Content,
          ButtonGoProfile } from '../../componentsSC/NavbarSC'
 import { useNavigate } from "react-router-dom";
 import SideBar from "./SideBar";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+const getId = useSelector(state => state.users.idState)
+const ids = getId[0]
 
   const navigate = useNavigate()
 
 
-  const navigateToProfile = (id)=>{
-    navigate(`/profile/${id}}`)
+  const navigateToProfile = (ids)=>{
+    if(ids !== ''){
+      navigate(`/profile/${ids}}`)
+    }
+    navigate('/login')
   }
 
   return (
@@ -108,7 +114,7 @@ const Navbar = () => {
           </Link>
         </div>
         <ButtonGoProfile onClick={()=>{
-          navigateToProfile(1)
+          navigateToProfile({ids})
         }}>
           <Icons 
             width="24" 
