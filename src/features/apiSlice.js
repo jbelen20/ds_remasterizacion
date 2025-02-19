@@ -16,8 +16,28 @@ export const apiSlice = createApi({
         getAnyCategorys: builder.query({
             query:(theCategory) =>  'categorys/' + theCategory,
         }),
+        postRegister: builder.mutation({
+            query:({name, lastname, email, phone, password}) => ({
+                url: '/create',
+                method: 'POST',
+                body: {name, lastname, email, phone, password}
+            }),
+        }),
+        postLoguin: builder.mutation({
+            query:(security) => ({
+                url: '/login',
+                method: 'POST',
+                body: security
+            }),
+        }),
     })
 
 })
 
-export const { useGetAllUserQuery, useGetAUserQuery, useGetCategoryQuery, useGetAnyCategorysQuery } = apiSlice;
+export const { useGetAllUserQuery,
+               useGetAUserQuery,
+               useGetCategoryQuery, 
+               useGetAnyCategorysQuery,
+               usePostLoguinMutation,
+               usePostRegisterMutation,
+            } = apiSlice;

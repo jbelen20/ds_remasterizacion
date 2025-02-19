@@ -6,17 +6,20 @@ import { ContentFormAccount,
 } from '../../componentsSC/CreateAccountSC'
 import { AlertError } from '../../componentsSC/LoginSC'
 import { useState } from 'react'
-import { useDispatch} from 'react-redux'
-import { addUser } from '../../features/users/userSlice'
 import { useNavigate } from 'react-router-dom'
 import {v4} from 'uuid'
 import Navbar from '../home/navbar'
+import { usePostRegisterMutation} from '../../features/apiSlice';
 
 export default function CreateAccount() {
-  const navigate = useNavigate();
-  const dispatch = useDispatch()
+
+const [registerUser, { isError, error, isSuccess }] = usePostRegisterMutation();
+const [errorx, setErrorx] = useState(false)
+
+const navigate = useNavigate();
 
  const [newUser, setNewUser] = useState({
+    id: '',
     name: '',
     lastname:'',
     email: '',
@@ -24,28 +27,32 @@ export default function CreateAccount() {
     password: ''
  })
 
- const [error, setError] = useState(false)
 
  const handlerRecopUser = (e)=>{
   setNewUser({
     ...newUser,
+    id: v4(),
     [e.target.name]: e.target.value,
   })
 }
 
-const handlerSubmit = (event)=>{
+
+
+const handlerSubmit = async(event)=>{
   event.preventDefault()
-  if(newUser.name === "" || newUser.lastname === "" || newUser.email === "" || newUser.phone === "" || newUser.password === "" ){
-    setError(true)
+  if(newUser.id === "" || newUser.name === "" || newUser.lastname === "" || newUser.email === "" || newUser.phone === "" || newUser.password === "" ){
+    setErrorx(true)
     return
   }
-  setError(false)
-  console.log(newUser)
-  dispatch(addUser({
-    ...newUser,
-    id: v4()
-  }))
-  navigate("/profile")
+  setErrorx(false)
+  try {
+    await registerUser(newUser).unwrap();
+    alert('Registration successful!');
+  } catch (err) {
+    console.error('Failed to register:', err);
+  }
+  navigate(`/profile/1`);
+  // console.log(newUser)
  }
     
 
@@ -106,7 +113,9 @@ const handlerSubmit = (event)=>{
                   onChange={handlerRecopUser}
                 />
             </Fields>
-        {error && <AlertError>¡Todos los campos son obligatorios!</AlertError>}
+            {isError && <p style={{ color: 'red' }}>{error?.data?.message || 'Error occurred'}</p>}
+            {isSuccess && <p style={{ color: 'green' }}>Registration successful!</p>}
+            {errorx && <AlertError>¡Todos los campos son obligatorios!</AlertError>}
         <ButtonCreateAccount>Crear cuenta</ButtonCreateAccount>
         </form>
       </div>

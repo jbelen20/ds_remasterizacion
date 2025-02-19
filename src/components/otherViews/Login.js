@@ -13,13 +13,17 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useGetAllUserQuery } from '../../features/apiSlice'
 import { useDispatch } from 'react-redux'
 import { getId } from '../../features/users/userSlice'
+// import { useLocalStorage } from '../../useLocalStorage'
+
 
 
 export default function Login() {
   const dispatch = useDispatch()
   const navigate = useNavigate();
-  const [emailOrPhone, setEmailOrPhone] = useState('')
-  const [password, setPassword] = useState('')
+  // const [emailOrPhone, setEmailOrPhone] = useLocalStorage('emailOrPhone', '')
+  // const [password, setPassword] = useLocalStorage('password', '')
+  const [emailOrPhone, setEmailOrPhone] = useState()
+  const [password, setPassword] = useState()
   const [error, setError] = useState(false)
   
   const id = []
@@ -29,10 +33,9 @@ export default function Login() {
       return console.log('no se encontro el usuario')
     }
       id.push(element.id)
-      console.log(id)
+      // console.log(id)
       return element.email
-    })}
-    
+    })}    
     
     const handlerSubmit = (e)=>{
       e.preventDefault()
@@ -41,10 +44,8 @@ export default function Login() {
         return
       }
       setError(false)
-      // console.log({'name':emailOrPhone, 'password':password })
       if(id !== ''){
         navigate(`/profile/${id}`);
-        console.log(id)
         dispatch(getId(id))
     }
   }

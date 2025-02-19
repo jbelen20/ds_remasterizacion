@@ -15,10 +15,13 @@ export const createUserSlice = createSlice({
         },
         getId: (state, action) => {
             state.idState = action.payload 
+        },
+        deleteId:(state, action) => {
+            state.idState = localStorage.clear()
         }
     }
 })
 
 
-export const {addUser, getId}  = createUserSlice.actions
+export const {addUser, getId, deleteId}  = createUserSlice.actions
 export default createUserSlice.reducer;

@@ -7,8 +7,7 @@ export const Acategory = styled.li`
     color:#fff;
     font-weight: 1000;
     &:hover{
-    background: rgb(221,221,221);
-    background: linear-gradient(25deg, rgba(221,221,221,0.05926120448179273) 0%, rgba(219,122,100,1) 51%, rgba(255,248,227,0) 100%);
+    background: rgba(1,1,1, 0.3);
     }
   
 `
@@ -23,12 +22,12 @@ export const TitleCategory = styled.p`
 export const ConstentSideBar = styled.div`
     margin-top: 1rem ;
     margin-left: -10rem;
-    position: sticky;
-    top: 1px;
+    position: fixed;
+    top: -15px;
     height: 100vh;
     z-index:1000;
-    background: rgb(172,76,8);
-    background: linear-gradient(25deg, rgba(172,76,8,1) 0%, rgba(219,122,42,1) 24%, rgba(255,248,227,0) 100%);
+    backdrop-filter: brightness(70%);
     width:22%;
     display: none;
+    left:10rem;
     `
